@@ -3,13 +3,12 @@ import os
 import sys
 import unittest
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "src")))
+sys.path.append(
+    os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "eparser"))
+)
 
 from ebook import eBook
 from utils import *
-
-# from src.files import *
-from parse import *
 
 TEST_EPUB_PATH = "tests/test-epubs/large.epub"
 TEST_EPUB_NAME = "Viewpoint"

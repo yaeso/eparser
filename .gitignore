@@ -1,5 +1,5 @@
 .venv/
-src/__pycache__/
+eparser/__pycache__/
 tests/test.epub
 extracted-epubs
-src/extracted-epubs
+eparser/extracted-epubs
