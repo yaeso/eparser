@@ -43,7 +43,7 @@ def extract_metadata(opf_file_path: str, name: str) -> dict:
 
 
 def parse(filenames: list[str], directory_path: str, standard: bool = False) -> eBook:
-    """Parses .xhtml files in the extracted folder and stores metadata in an eBook."""
+    """Parses .xhtml files in the extracted folder and stores chapters in an eBook."""
     ebook = eBook()
     chapter_number = 1
 
