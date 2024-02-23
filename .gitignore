@@ -1,0 +1,5 @@
+.venv/
+src/__pycache__/
+tests/test.epub
+extracted-epubs
+src/extracted-epubs
