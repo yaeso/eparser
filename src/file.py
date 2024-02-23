@@ -1,7 +1,6 @@
 import logging
 import os
 import patoolib
-from natsort import os_sorted
 
 
 def extract(
