@@ -18,6 +18,10 @@ def extract(
     except Exception as error:
         logging.error(error)
 
+    oebps_path = os.path.join(out_directory, "OEBPS")
+    if not os.path.exists(oebps_path):
+        os.makedirs(oebps_path)
+
 
 def default_path(ebook_name: str) -> str:
     """Sets the default extraction path."""
