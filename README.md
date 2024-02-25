@@ -4,8 +4,21 @@ eParser is a utility library for managing and converting eBooks into text.
 
 eParser obtains eBook metadata and text contents fast. It also stores the contents in an eBook object.
 
-```py
+## eBook Object
 
+```py
+# The eBook object is essentially a dictionary
+
+{
+  Title: "title",
+  Author: "author",
+  Description: "description",
+  Genres: ["list", "of", "genres"],
+  Chapters: {
+    1: "chapter 1 contents",
+    ...
+  }
+}
 ```
 
 # Usage
