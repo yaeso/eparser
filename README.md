@@ -1,27 +1,33 @@
 # eParser
 
-eParser is a utility library for managing and converting eBooks into text.
+eParser is a Python utility library for managing and converting eBooks into text. It provides fast access to eBook metadata and text contents, allowing you to create and store eBook objects.
 
-eParser obtains eBook metadata and text contents fast. It also stores the contents in an eBook object.
+## Installation
+
+You can install eParser using pip: (not yet uploaded)
+
+```
+pip install eparser
+```
 
 ## eBook Object
 
-```py
-# The eBook object is essentially a dictionary
+The eBook object is a dictionary with the following format:
 
+```py
 {
-  Title: "title",
-  Author: "author",
-  Description: "description",
-  Genres: ["list", "of", "genres"],
+  Title: "Lord of the Mysteries",
+  Author: "Cuttlefish That Loves Diving",
+  Description: "Waking up to be faced with a string of mysteries...",
+  Genres: ["Action", "Adventure", "Drama", "Fantasy", "Historical", "Horror", "Mature", "Mystery", "Psychological", "Seinen", "Supernatural"],
   Chapters: {
-    1: "chapter 1 contents",
-    ...
+    1: "Chapter 1: In the beginning..."",
+    2: ...
   }
 }
 ```
 
-# Usage
+## Usage
 
 The library has two main functions:
 
@@ -37,7 +43,7 @@ epub_file_path = "some/path.epub"
 ebook_name = "New eBook"
 
 # Create an eBook
-eBook = get_ebook(epub_file_path, ebook_name)
+eBook = eparser.get_ebook(epub_file_path, ebook_name)
 
 # Get metadata or book contents
 print(eBook.get_title())
@@ -45,9 +51,9 @@ print(eBook.get_title())
 # Obtain first chapter
 print(eBook.get_chapter(1))
 
-# You can also specify the directory for the extraction to occur
+# Specify the directory for the extraction -- default set to current directory
 out_directory = "some/other/directory"
-eBook = get_ebook(epub, name, out_directory)
+eBook = eparser.get_ebook(epub_file_path, ebook_name, out_directory)
 ```
 
 ```process_epub()``` which extracts the contents of an ePUB and provides a list of chapter filenames, as well as the ```content.opf```. It also provides the path to the extraction folder and the path to the ```content.opf``` file.
@@ -80,12 +86,13 @@ eBook.set_description(description)
 eBook.set_genres(genres)
 ```
 
-# Note
+## Note
 
 Any ePUB used must be of Standard or OEBPS format.
 
-# Todo
+## Todo
 
-The parsing and extraction functions no longer differentiate between Standard and OEBPS. 
+The parsing and extraction functions no longer differentiates between Standard and OEBPS. 
 
+Add a utility function that converts the eBook to JSON or YAML.
 
